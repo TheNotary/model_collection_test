@@ -12,8 +12,16 @@ describe 'User model' do
       @user.enrollment.should be_kind_of Array
     end
     
+    it 'should have a working setter' do
+      str = 'blah'
+      @user.enrollment = str
+      @user.enrollment.first.should be str
+    end
+    
     it 'should be able to have more names pushed to it' do
       lambda do
+        #@user.enrollment = "Oh noez, this won't work at all"
+        #puts @user.enrollment
         @user.enrollment << "skiing"
       end.should change(@user.courses, :count).by(1)
       

@@ -11,14 +11,26 @@ class User < ActiveRecord::Base
   #def enrollment.push(val)
   #  puts "hello"
   #end
-  
   def enrollment=(val)
-    puts "hello"
-    return nil
+    self.courses.delete_all
+    self.courses.create!(:name => val)
   end
+  
+  #def enrollment.push(val)
+  #  puts "hello"
+  #  return nil
+  #end
   
   #def enrollment.<<(val)
   #  puts "hello"
   #  return nil
   #end
+  
+  class Enrollment
+    def <<(val)
+      require 'pry';binding.pry
+      puts "hello"
+    end
+  end
+  
 end
