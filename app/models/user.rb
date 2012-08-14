@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :courses
+  has_many_and_belongs_to :courses
   
   def enrollment
     courses = self.courses
