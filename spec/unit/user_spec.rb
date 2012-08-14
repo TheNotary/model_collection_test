@@ -18,7 +18,7 @@ describe 'User model' do
       @user.enrollment.should eq([str])
     end
     
-    it 'should be able to have more names pushed to it', :skip => 'true' do
+    it 'should be able to have more names pushed to it' do  # , :skip => 'true' do
       lambda do
         #@user.enrollment = "Oh noez, this won't work at all"
         #puts @user.enrollment
