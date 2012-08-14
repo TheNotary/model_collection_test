@@ -14,11 +14,11 @@ describe 'User model' do
     
     it 'should have a working setter' do
       str = 'blah'
-      @user.enrollment = str
-      @user.enrollment.first.should be str
+      @user.enrollment = [str]
+      @user.enrollment.should eq([str])
     end
     
-    it 'should be able to have more names pushed to it' do
+    it 'should be able to have more names pushed to it', :skip => 'true' do
       lambda do
         #@user.enrollment = "Oh noez, this won't work at all"
         #puts @user.enrollment

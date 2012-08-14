@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many_and_belongs_to :courses
+  has_many :courses
   
   def enrollment
     courses = self.courses
@@ -13,7 +13,9 @@ class User < ActiveRecord::Base
   #end
   def enrollment=(val)
     self.courses.delete_all
-    self.courses.create!(:name => val)
+    val.each do |ele|
+      self.courses.create!(:name => ele)
+    end
   end
   
   #def enrollment.push(val)
