@@ -1,7 +1,7 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-#ModelCollectionTest::Application.load_tasks
+ModelCollectionTest::Application.load_tasks
 
 require "rspec/core/rake_task" # RSpec 2.0
  
@@ -31,4 +31,4 @@ RSpec::Core::RakeTask.new(:current) do |spec|
 end
 
 
-task :default => :all
+#task :default => :all
